@@ -2,12 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+//struct usuario
 typedef struct{
     char email[100];
     char nome[100];
 } Usuario;
 
+//struct livro
 typedef struct{
     int codigo;
     char titulo[100];
@@ -18,3 +19,42 @@ typedef struct{
 
 } Livro;
 
+//no arvore livro
+typedef struct _NoLivro{
+    Livro livro;
+    struct _NoLivro *esquerda, *direita;
+} NoLivro;
+
+//no arvore usuarios
+typedef struct _NoUser{
+    Usuario usuario;
+    struct _NoUser *esquerda, *direita;
+} NoUser;
+
+
+//cadastrar usuario
+NoUser* inserirUser(NoUser *raiz, Usuario usuario);
+
+//buscar usuario por email
+NoUser* buscarUserEmail(NoUser *raiz, char *email);
+
+//buscar usuario por nome
+void buscarUserNome(NoUser *raiz, char *nome, int *encontrou);
+
+//excluir usuario usando email
+NoUser* excluirUsuario(NoUser *raiz, char *email);
+
+//inserir livro
+NoLivro* inserirLivro(NoLivro *raiz, Livro livro);
+
+//buscar livro pelo codigo
+NoLivro* buscarLivroCodigo(NoLivro *raiz, int codigo);
+
+//buscar livro pelo autor
+void buscarLivroAutor(NoLivro *raiz, char *autor, int *encontrou);
+
+//excluir livro usando codigo
+NoLivro* excluirLivro(NoLivro *raiz, int codigo);
+
+//listar os emprestimos do usuario usando email
+void listarEmprestimosUsuario(NoLivro *raiz, char *email, int *encontrou);
