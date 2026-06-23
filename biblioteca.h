@@ -15,7 +15,7 @@ typedef struct{
     char autor[100];
     int ano;
     int status; //0-disponivel, 1-emprestado
-    char email_emp[100];
+    char email_emprestimo[100];
 
 } Livro;
 
@@ -33,13 +33,13 @@ typedef struct _NoUser{
 
 
 //cadastrar usuario
-NoUser* inserirUser(NoUser *raiz, Usuario usuario);
+NoUser* inserirUsuario(NoUser *raiz, Usuario usuario);
 
 //buscar usuario por email
-NoUser* buscarUserEmail(NoUser *raiz, char *email);
+NoUser* buscarUsuarioEmail(NoUser *raiz, char *email);
 
 //buscar usuario por nome
-void buscarUserNome(NoUser *raiz, char *nome, int *encontrou);
+void buscarUsuarioNome(NoUser *raiz, char *nome, int *encontrou);
 
 //excluir usuario usando email
 NoUser* excluirUsuario(NoUser *raiz, char *email);
