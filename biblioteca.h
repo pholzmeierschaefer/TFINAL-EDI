@@ -58,3 +58,21 @@ NoLivro* excluirLivro(NoLivro *raiz, int codigo);
 
 //listar os emprestimos do usuario usando email
 void listarEmprestimosUsuario(NoLivro *raiz, char *email, int *encontrou);
+
+//cadastrar
+void menuCadastro(NoLivro **raizLivros, NoUser **raizUsuarios);
+
+//consultar
+void menuConsulta(NoLivro *raizLivros, NoUser *raizUsuarios);
+
+//atualizar
+void menuAtualizacao(NoLivro *raizLivros, NoUser *raizUsuarios);
+
+//excluir
+void menuExclusao(NoLivro **raizLivros, NoUser **raizUsuarios);
+
+//emprestar
+void realizarEmprestimo(NoLivro *raizLivros, NoUser *raizUsuarios);
+
+//devolver
+void realizarDevolucao(NoLivro *raizLivros);
