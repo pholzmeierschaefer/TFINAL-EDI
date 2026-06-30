@@ -298,3 +298,23 @@ void fazerDevolucao(NoLivro *raizLivros) {
         printf("O livro nao estava emprestado ou nao existe\n");
     }
 }
+
+void liberaLivros(NoLivro *raiz){
+    if (raiz == NULL) return;
+    liberaLivros(raiz->esquerda);
+    liberaLivros(raiz->direita);
+    free(raiz);
+
+}
+
+
+
+void liberaUsuario(NoUser *raiz){
+    if (raiz == NULL) return;
+    liberaUsuario(raiz->esquerda);
+    liberaUsuario(raiz->direita);
+    free(raiz);
+
+}
+
+

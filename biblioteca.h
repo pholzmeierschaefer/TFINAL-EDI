@@ -76,3 +76,8 @@ void realizarEmprestimo(NoLivro *raizLivros, NoUser *raizUsuarios);
 
 //devolver
 void realizarDevolucao(NoLivro *raizLivros);
+
+void liberaLivros(NoLivro *raiz);
+
+void liberaUsuario(NoUser *raiz);
+
