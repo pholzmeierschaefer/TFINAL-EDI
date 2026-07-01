@@ -262,7 +262,7 @@ void menuAtualizacao(NoLivro *raizLivros, NoUser *raizUsuarios) {
 }
 
 //implementacao para emprestar
-void fazerEmprestimo(NoLivro *raizLivros, NoUser *raizUsuarios) {
+void realizarEmprestimo(NoLivro *raizLivros, NoUser *raizUsuarios) {
     int id;
     char email[100];
     printf("ID do livro: "); scanf("%d", &id);
@@ -285,7 +285,7 @@ void fazerEmprestimo(NoLivro *raizLivros, NoUser *raizUsuarios) {
 
 
 //implementacao para devolver
-void fazerDevolucao(NoLivro *raizLivros) {
+void realizarDevolucao(NoLivro *raizLivros) {
     int id;
     printf("ID do Livro a ser devolvido: "); scanf("%d", &id);
     NoLivro *livro = buscarLivroCodigo(raizLivros, id);
@@ -317,4 +317,23 @@ void liberaUsuario(NoUser *raiz){
 
 }
 
+
+
+void menuExclusao(NoLivro **raizLivros, NoUser **raizUsuarios) {
+    int op;
+    printf("\nExclusao\n1- Livros\n2- Usuarios\n0- Voltar\nDigite a opcao: ");
+    scanf("%d", &op);
+    
+    if (op == 1) {
+        int id; 
+        printf("ID do livro a ser excluido: "); 
+        scanf("%d", &id);
+        *raizLivros = excluirLivro(*raizLivros, id);
+    } else if (op == 2) {
+        char email[100]; 
+        printf("Email do usuario a ser excluido: "); 
+        scanf("%s", email);
+        *raizUsuarios = excluirUsuario(*raizUsuarios, email);
+    }
+}
 

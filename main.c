@@ -6,7 +6,7 @@ int main(){
 
     int op = -1;
     NoLivro *raizLivros = NULL;
-    NoLivro *raizUsuarios = NULL;
+    NoUser *raizUsuarios = NULL;
 
     while (op != 0)
     {
@@ -39,7 +39,7 @@ int main(){
 
         case 0:
             liberaLivros(raizLivros);
-            liberaUsuarios(raizUsuarios);
+            liberaUsuario(raizUsuarios);
             printf("Programa encerrado. Memoria liberada.\n");
             break;
 
